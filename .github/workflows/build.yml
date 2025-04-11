@@ -3,8 +3,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: petejohanson/zmk/.github/workflows/build-user-config.yml@core/zephyr-3.5-update
-    with:
-      config_path: config
-    secrets: inherit
-env:
-  USE_CUSTOM_WEST: true
