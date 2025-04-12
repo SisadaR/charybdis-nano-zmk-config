@@ -4,13 +4,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
+#include <dt-bindings/zmk/pointing.h>
 
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
     quick-tap-ms = <150>;
 };
+
+&mt { flavor = "balanced"; };
 
 / {
     keymap {
@@ -29,67 +31,66 @@
         Lower {
             label = "Lower";
             bindings = <
-&trans        &trans    &kp UP    &trans     &trans     &trans      &kp N7     &kp N8   &kp N9  &kp N0   &kp HOME  &kp F1
-&trans        &kp LEFT  &kp DOWN  &kp RIGHT  &trans     &trans      &kp N4     &kp N5   &kp N6  &none    &trans    &kp F10
-&kp LEFT_ALT  &trans    &trans    &trans     &kp MINUS  &kp PLUS    &kp N1     &kp N2   &kp N3  &kp DOT  &trans    &kp F20
-                                  &kp LGUI   &kp SPACE  &trans      &kp RCTRL  &kp RET
+&trans  &kp NUMBER_1       &kp NUMBER_2  &kp N3        &kp N4         &kp N5          &kp N6         &kp N7         &kp N8     &kp N9    &kp N0      &none
+&none   &kp LEFT_BRACKET   &kp DOWN      &kp LS(PLUS)  &kp MINUS      &kp LS(LPAR)    &kp LS(RPAR)   &kp MINUS      &kp EQUAL  &kp LBKT  &kp RBKT    &none
+&none   &kp LS(LESS_THAN)  &trans        &kp EQUAL     &kp LS(UNDER)  &kp LS(LBRC)    &kp LS(RBRC)   &none          &none      &none     &kp LS(GT)  &none
+                                         &none         &none          &none           &kp BACKSLASH  &kp LG(SPACE)
             >;
         };
 
         Raise {
             label = "Raise";
             bindings = <
-&trans  &kp EXCL      &kp AT       &kp HASH    &kp DLLR   &kp PRCNT       &kp CARET  &kp AMPS     &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DEL
-&trans  &bt BT_CLR    &bt BT_PRV   &bt BT_NXT  &trans     &to 3           &kp UNDER  &kp EQUAL    &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_TOG  &bootloader  &trans      &trans     &trans          &kp MINUS  &kp PLUS     &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                   &kp LGUI    &kp SPACE  &kp LEFT_ALT    &trans     &bootloader
+&none  &kp EXCL   &kp AT       &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
+&none  &kp GRAVE  &none        &kp F1    &kp F2    &kp F3       &kp F4     &kp F5    &kp F6           &none     &kp BSLH  &none
+&none  &kp TILDE  &bootloader  &kp F7    &kp F8    &kp F9       &kp F10    &kp F11   &kp F12          &none     &kp PIPE  &none
+                               &none     &none     &none        &none      &none
             >;
         };
 
         Move {
             label = "move";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &sl 4           &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans    &trans  &trans  &trans  &trans  &to 0
-                        &trans  &trans  &kp LEFT_ALT    &kp RGUI  &trans
+&none  &kp ESC    &none      &none     &none         &kp INSERT    &kp HOME       &kp PG_DN  &kp PG_UP  &kp END    &kp ESC    &none
+&none  &none      &kp LCTRL  &kp LALT  &kp LEFT_GUI  &none         &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT  &none      &none
+&none  &kp LSHFT  &none      &none     &none         &kp DEL       &kp BACKSPACE  &none      &none      &none      &kp RSHFT  &none
+                             &none     &mo 7         &none         &kp TAB        &none
             >;
         };
 
         Number {
-            label = "number";
             bindings = <
-&kt F5   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp LC(RA(Y))  &kp LC(RA(U))  &kp LC(RA(I))  &kp LC(RA(H))  &kp LC(RA(J))  &kp LC(RA(DEL))
-&to 3    &kp L         &kp O         &kp Y         &kp K         &kp G           &trans         &trans         &trans         &trans         &trans         &kp LA(F4)
-&kp F10  &none         &to 0         &none         &kp NUMBER_6  &kp NUMBER_7    &trans         &trans         &trans         &trans         &trans         &to 0
-                                     &kp J         &kp I         &kp M           &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp PLUS   &kp N7  &kp N8  &kp N9  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp MINUS  &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp STAR   &kp N1  &kp N2  &kp N3  &trans  &trans
+                        &trans  &trans  &kp EQUAL    &kp FSLH   &kp N0
             >;
         };
 
         Numpad {
             bindings = <
-&trans     &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&mkp MCLK  &trans  &trans  &trans     &trans  &trans       &trans  &trans  &trans  &trans  &trans  &mkp LCLK
-                           &mkp LCLK  &trans  &mkp RCLK    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp LS(PLUS)  &kp N7  &kp N8  &kp N9  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp MINUS     &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp LS(STAR)  &kp N1  &kp N2  &kp N3  &trans  &trans
+                        &trans  &trans  &kp EQUAL    &kp FSLH      &kp N0
             >;
         };
 
         Mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&none  &none       &none  &none  &none  &none    &none  &mkp MB4   &mkp MB5   &none      &none  &none
+&none  &none       &none  &none  &none  &none    &none  &mkp LCLK  &mkp RCLK  &mkp MCLK  &none  &none
+&none  &kp LSHIFT  &none  &none  &none  &none    &none  &none      &none      &none      &none  &none
+                          &none  &none  &none    &none  &none
             >;
         };
 
-        keyboard_fn {
+        Keyboard_FN {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&none  &kp KP_NUMLOCK  &none  &none  &none  &bt BT_CLR    &none  &out OUT_BLE  &out OUT_USB  &none         &none        &none
+&none  &kp CAPSLOCK    &none  &none  &none  &none         &none  &bt BT_SEL 3  &bt BT_SEL 4  &none         &none        &none
+&none  &none           &none  &none  &none  &none         &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bootloader  &none
+                              &none  &none  &none         &none  &none
             >;
         };
     };
