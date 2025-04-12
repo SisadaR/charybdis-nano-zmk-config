@@ -51,9 +51,9 @@
         Move {
             label = "move";
             bindings = <
-&none  &kp ESC    &none      &none     &none         &kp INSERT    &kp HOME       &kp PG_DN     &kp PG_UP     &kp END    &kp ESC    &none
-&none  &none      &kp LCTRL  &kp LALT  &kp LEFT_GUI  &none         &kp LEFT       &kp DOWN      &kp UP        &kp RIGHT  &none      &none
-&none  &kp LSHFT  &none      &none     &none         &kp DEL       &kp BACKSPACE  &msc SCRL_UP  &msc SCRL_UP  &none      &kp RSHFT  &none
+&none  &kp ESC    &none      &none     &none         &kp INSERT    &kp HOME       &kp PG_DN  &kp PG_UP  &kp END    &kp ESC    &none
+&none  &none      &kp LCTRL  &kp LALT  &kp LEFT_GUI  &none         &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT  &none      &none
+&none  &kp LSHFT  &none      &none     &none         &kp DEL       &kp BACKSPACE  &none      &none      &none      &kp RSHFT  &none
                              &none     &mo 7         &none         &kp TAB        &none
             >;
         };
