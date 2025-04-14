@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
+#include <dt-bindings/zmk/pointing.h>
 
 &lt {
     tapping-term-ms = <240>;
@@ -23,7 +23,7 @@
             bindings = <
 &none  &kp Q        &kp W        &kp E           &kp R       &kp T          &kp Y      &kp U            &kp I       &kp O        &kp P            &none
 &none  &lt 5 A      &mt LCTRL S  &mt LEFT_ALT D  &mt LCMD F  &kp G          &kp H      &mt RIGHT_WIN J  &mt LALT K  &mt LCTRL L  &lt 4 SEMICOLON  &none
-&none  &mt LSHFT Z  &kp X        &kp C           &lt 6 V     &kp B          &kp N      &kp M            &kp COMMA   &kp DOT      &mt RSHFT SLASH  &none
+&none  &mt LSHFT Z  &kp X        &kp C           &lt 6 V     &lt 3 B        &kp N      &kp M            &kp COMMA   &kp DOT      &mt RSHFT SLASH  &none
                                  &kp BACKSPACE   &mo 1       &lt 3 SPACE    &kp ENTER  &mo 2
             >;
         };
@@ -51,10 +51,10 @@
         Move {
             label = "move";
             bindings = <
-&none  &kp ESC    &none      &none     &none         &kp INSERT    &kp HOME       &kp PG_DN       &kp PG_UP  &kp END       &kp ESC    &none
-&none  &none      &kp LCTRL  &kp LALT  &kp LEFT_GUI  &none         &none          &kp LEFT_ARROW  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &none
-&none  &kp LSHFT  &none      &none     &none         &kp DEL       &kp BACKSPACE  &none           &none      &none         &kp RSHFT  &none
-                             &none     &mo 7         &none         &kp TAB        &kp ENTER
+&none  &kp ESC    &none      &none     &none         &kp INSERT    &kp HOME        &kp PG_DN   &kp PG_UP     &kp END    &kp ESC    &none
+&none  &none      &kp LCTRL  &kp LALT  &kp LEFT_GUI  &none         &kp LEFT_ARROW  &kp DOWN    &kp UP_ARROW  &kp RIGHT  &none      &none
+&none  &kp LSHFT  &none      &none     &none         &kp DEL       &kp BACKSPACE   &kp DELETE  &none         &none      &kp RSHFT  &none
+                             &none     &mo 7         &none         &kp TAB         &kp ENTER
             >;
         };
 
